@@ -1,5 +1,5 @@
-# Hello Driver Sample
-This is a driver sample code. (test on Ubuntu 10.04)
+# App-Framework-HAL-Driver
+This is a sample code. (test on Qualcomm MSM8953)
 
 # How to setup build code environment
 1. install build code tools
