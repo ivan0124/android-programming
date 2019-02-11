@@ -1,23 +1,21 @@
 # App-Framework-HAL-Driver
 This is a sample code. (test on Qualcomm MSM8953)
 
-# Code Description
-1. install driver, hello_init() is called: [hello.c](https://github.com/ivan0124/Linux-programming/blob/master/driver_hello/hello.c)
+# Driver Code Description
+Step1: add [circular-char.c](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/circular-char.c)
+
+Step2: the following code is added to [Makefile](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/Makefile)
 <pre>
-static int hello_init(void) {
-        printk("<1>hello_driver: init\n");
-...
-}
-...
-module_init(hello_init);
+#opersys1
+obj-y += circular-char.o
+#opersys1
 </pre>
-2.  uninstall driver, hello_exit() is called:  [hello.c](https://github.com/ivan0124/Linux-programming/blob/master/driver_hello/hello.c)
+
+Step3: Using the following instruction to verify that driver work
 <pre>
-static void hello_exit(void) {
-        printk("<1>hello_driver: exit\n");
-}
-...
-module_exit(hello_exit);
+$ echo hello > dev/circchar
+$ cat dev/circchar
+#will see the hello
 </pre>
 
 # How To Test 
