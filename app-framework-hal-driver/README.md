@@ -4,7 +4,7 @@ This is a sample code. (test on Qualcomm MSM8953)
 # Driver Code Description
 Step1: add ~/android/kernel/msm-3.18/drivers/misc/[circular-char.c](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/circular-char.c)
 
-Step2: the following code is added to [Makefile](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/Makefile)
+Step2: the following code is added to ~/android/kernel/msm-3.18/drivers/misc/[Makefile](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/Makefile)
 <pre>
 #opersys1
 obj-y += circular-char.o
