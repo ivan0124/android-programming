@@ -1,23 +1,6 @@
 # App-Framework-HAL-Driver
 This is a sample code. (test on Qualcomm MSM8953)
 
-# How to setup build code environment
-1. install build code tools
-<pre>
-sudo apt-get install build-essential
-</pre>
-2. check wehether kernel header files exist.
-<pre>
-you will see result like below:
-![result link](http://139.162.35.49/image/Linux-Programming/small_template_20160414.png)
-
-ls /lib/modules/$(uname -r)/build
-</pre>
-3. if kernel header files doesn't exist, try to install them.
-<pre>
-sudo apt-get install linux-headers-$(uname -r)
-</pre>
-
 # Code Description
 1. install driver, hello_init() is called: [hello.c](https://github.com/ivan0124/Linux-programming/blob/master/driver_hello/hello.c)
 <pre>
