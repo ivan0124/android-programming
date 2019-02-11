@@ -1,7 +1,7 @@
 # App-Framework-HAL-Driver
 This is a sample code. (test on Qualcomm MSM8953)
 
-# Driver Code Description
+# Driver Source Code Description
 Step1: add ~/android/kernel/msm-3.18/drivers/misc/[circular-char.c](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/circular-char.c)
 
 Step2: the following code is added to ~/android/kernel/msm-3.18/drivers/misc/[Makefile](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/kernel/msm-3.18/drivers/misc/Makefile)
@@ -18,19 +18,20 @@ $ cat dev/circchar
 #will see the hello
 </pre>
 
+# HAL Source Code Description
+Step1: add ~/android/hardware/libhardware/include/hardware/[opersyshw.h](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/hardware/libhardware/include/hardware/opersyshw.h)
+
+Step2: add ~/android/hardware/libhardware/modules/opersyshw/[opersyshw_qemu.c](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/hardware/libhardware/modules/opersyshw/opersyshw_qemu.c)
+
+Step3: `opersyshw` is added in ~/android/hardware/libhardware/modules/[Android.mk](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/hardware/libhardware/modules/Android.mk)
+<pre>
+hardware_modules := gralloc hwcomposer audio nfc nfc-nci local_time \
+	power usbaudio audio_remote_submix camera usbcamera consumerir sensors vibrator \
+	tv_input fingerprint input vehicle thermal vr LcdThermalProtection opersyshw
+include $(call all-named-subdir-makefiles,$(hardware_modules))
+</pre>
+
+Step4: `PRODUCT_PACKAGES += opersyshw.default` is added in ~/android/device/qcom/msm8953_64/[msm8953_64.mk](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/device/qcom/msm8953_64/msm8953_64.mk)
+
 # How To Test 
-1.Typing `make` to build code
 
-2.install driver
-<pre>
-$ sudo insmod ./hello.ko
-</pre>
-3.check the printk() log by typing `dmesg`
-<pre>you will see "<1>hello_driver: init" in log </pre>
-
-4.uninstall driver
-<pre>
-$ sudo rmmod hello
-</pre>
-5.check the printk() log by typing `dmesg`
-<pre>you will see "<1>hello_driver: exit" in log</pre>
