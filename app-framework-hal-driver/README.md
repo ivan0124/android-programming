@@ -91,5 +91,18 @@ Step8: add the following code in ~/android/frameworks/base/services/core/jni/[An
 $(LOCAL_REL_DIR)/com_android_server_opersys_OpersysService.cpp \
 #opersys1
 </pre>
+
+Step9: add the following code in ~/android/frameworks/base/services/core/jni/[onload.cpp](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/services/core/jni/onload.cpp)
+<pre>
+...
+//opersys1
+int register_android_server_opersys_OpersysService(JNIEnv* env);
+//opersys1
+...
+//opersys1
+register_android_server_opersys_OpersysService(env);
+//opersys1
+...
+<pre>
 # How To Test 
 
