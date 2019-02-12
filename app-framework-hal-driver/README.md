@@ -42,5 +42,25 @@ Step1: add the following cdoe in ~/android/frameworks/base/[Android.mk](https://
 </pre>
 
 Step2: add the following code in ~/android/frameworks/base/core/java/android/app/[SystemServiceRegistry.java](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/core/java/android/app/SystemServiceRegistry.java)
+<pre>
+//opersys1
+import android.opersys.OpersysManager;
+ import android.opersys.IOpersysService;
+//opersys1
+...
+//opersys1
+        registerService(Context.OPERSYS_SERVICE, OpersysManager.class,
+                 new CachedServiceFetcher<OpersysManager>() {
+            @Override
+            public OpersysManager createService(ContextImpl ctx) {
+                 IBinder b = ServiceManager.getService(Context.OPERSYS_SERVICE);
+                 IOpersysService service = IOpersysService.Stub.asInterface(b);
+                 if (service == null) {
+                     return null;
+                 }
+                 return new OpersysManager(ctx, service);
+            }});
+//opersys1
+</pre>
 # How To Test 
 
