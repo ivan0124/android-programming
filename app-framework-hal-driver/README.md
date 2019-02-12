@@ -76,5 +76,14 @@ OPERSYS_SERVICE
 public static final String OPERSYS_SERVICE = "opersys";
 ...
 </pre>
+
+Step4: add file ~/android/frameworks/base/core/java/android/opersys/[IOpersysService.aidl](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/core/java/android/opersys/IOpersysService.aidl)
+
+Step5: add file ~/android/frameworks/base/core/java/android/opersys/[OpersysManager.java](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/core/java/android/opersys/OpersysManager.java)
+
+Step6: add file ~/android/frameworks/base/services/core/java/com/android/server/opersys/[OpersysService.java](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/services/core/java/com/android/server/opersys/OpersysService.java)
+
+Step7: add file ~/android/frameworks/base/services/core/jni/[com_android_server_opersys_OpersysService.cpp](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/services/core/jni/com_android_server_opersys_OpersysService.cpp)
+
 # How To Test 
 
