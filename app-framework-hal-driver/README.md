@@ -62,5 +62,19 @@ import android.opersys.OpersysManager;
             }});
 //opersys1
 </pre>
+
+Step3: add code in ~/android/frameworks/base/core/java/android/content/[Context.java](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/core/java/android/content/Context.java)
+<pre>
+...
+//opersys1
+OPERSYS_SERVICE
+...
+/**
+  * Opersys(opersys1) Service.
+  * @hide
+*/
+public static final String OPERSYS_SERVICE = "opersys";
+...
+</pre>
 # How To Test 
 
