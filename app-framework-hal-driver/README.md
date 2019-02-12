@@ -129,5 +129,10 @@ OpersysService opersys = null;
 ////opersys1
 </pre>
 
+Step11: add the following code in ~/android/frameworks/data-binding/compiler/src/main/resources/[api-versions.xml](https://raw.githubusercontent.com/ivan0124/android-programming/master/app-framework-hal-driver/android/frameworks/data-binding/compiler/src/main/resources/api-versions.xml)
+
+`<field name="OPERSYS_SERVICE" />`
+
+
 # How To Test 
 
