@@ -85,5 +85,11 @@ Step6: add file ~/android/frameworks/base/services/core/java/com/android/server/
 
 Step7: add file ~/android/frameworks/base/services/core/jni/[com_android_server_opersys_OpersysService.cpp](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/services/core/jni/com_android_server_opersys_OpersysService.cpp)
 
+Step8: add the following code in ~/android/frameworks/base/services/core/jni/[Android.mk](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/services/core/jni/Android.mk)
+<pre>
+#opersys1
+$(LOCAL_REL_DIR)/com_android_server_opersys_OpersysService.cpp \
+#opersys1
+</pre>
 # How To Test 
 
