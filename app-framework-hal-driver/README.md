@@ -105,5 +105,29 @@ register_android_server_opersys_OpersysService(env);
 ...
 </pre>
 
+Step10: add the following code in ~/android/frameworks/base/services/java/com/android/server/[SystemServer.java](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/services/java/com/android/server/SystemServer.java)
+<pre>
+...
+//opersys1
+import com.android.server.opersys.OpersysService;
+//opersys1
+...
+//opersys1
+OpersysService opersys = null;
+//opersys1
+...
+/////opersys1
+            try {
+                Slog.i(TAG, "Opersys Service");
+                opersys = new OpersysService(context);                                                             
+                Slog.i(TAG, "Add Opersys Service");
+                ServiceManager.addService(Context.OPERSYS_SERVICE, opersys);                                       
+                Slog.i(TAG, "Opersys Service Succeed!");                                                           
+            } catch (Throwable e) {
+               Slog.e(TAG, "Failure starting OpersysService Service", e);                                         
+            }
+////opersys1
+</pre>
+
 # How To Test 
 
