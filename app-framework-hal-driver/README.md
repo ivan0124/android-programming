@@ -33,5 +33,11 @@ include $(call all-named-subdir-makefiles,$(hardware_modules))
 
 Step4: `PRODUCT_PACKAGES += opersyshw.default` is added in ~/android/device/qcom/msm8953_64/[msm8953_64.mk](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/device/qcom/msm8953_64/msm8953_64.mk)
 
+# Framework Source Code Description
+Step1: add the following cdoe in ~/android/frameworks/base/[Android.mk](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/Android.mk)
+<pre>
+
+</pre>
+
 # How To Test 
 
