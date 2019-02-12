@@ -133,6 +133,41 @@ Step11: add the following code in ~/android/frameworks/data-binding/compiler/src
 
 `<field name="OPERSYS_SERVICE" />`
 
+# Add System Permission
+Step1: add the following code in ~/android/system/core/rootdir/[ueventd.rc](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/system/core/rootdir/ueventd.rc)
+<pre>
+#opersys1
+/dev/circchar             0660   system     system
+</pre>
+
+Step2: add the following code in ~/android/system/sepolicy/[device.te](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/system/sepolicy/device.te)
+<pre>
+#opersys1
+type circchar_device, dev_type;
+</pre>
+
+Step3: add the following code in ~/android/system/sepolicy/[file_contexts](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/system/sepolicy/file_contexts)
+<pre>
+#opersys1
+/dev/circchar        u:object_r:circchar_device:s0
+</pre>
+
+Step4: add the following code in ~/android/system/sepolicy/[service_context](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/system/sepolicy/service_contexts)
+<pre>
+opersys                                   u:object_r:opersys_service:s0
+</pre>
+
+Step5: add the following code in ~/android/system/sepolicy/[service.te](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/system/sepolicy/service.te)
+<pre>
+persys1
+type opersys_service, app_api_service, system_server_service, service_manager_type;
+#opersys1
+</pre>
+Step6:  add the following code in ~/android/system/sepolicy/[system_server.te](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/system/sepolicy/system_server.te)
+<pre>
+#opersys1
+allow system_server circchar_device:chr_file { open read write ioctl };
+</pre>
 
 # How To Test 
 
