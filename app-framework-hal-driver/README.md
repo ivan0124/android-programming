@@ -36,8 +36,11 @@ Step4: `PRODUCT_PACKAGES += opersyshw.default` is added in ~/android/device/qcom
 # Framework Source Code Description
 Step1: add the following cdoe in ~/android/frameworks/base/[Android.mk](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/Android.mk)
 <pre>
-
+        #opersys1
+        core/java/android/opersys/IOpersysService.aidl \
+        #opersys1
 </pre>
 
+Step2: add the following code in ~/android/frameworks/base/core/java/android/app/[SystemServiceRegistry.java](https://github.com/ivan0124/android-programming/blob/master/app-framework-hal-driver/android/frameworks/base/core/java/android/app/SystemServiceRegistry.java)
 # How To Test 
 
